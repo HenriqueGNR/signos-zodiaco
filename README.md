@@ -1,10 +1,10 @@
-# Consulta de Signo Zodiacal
+# Consulta de Signo do Zodíaco
 
-Um aplicativo web simples que determina o signo zodiacal do usuário com base em sua data de nascimento.
+Um aplicativo web simples que determina o Signo do Zodíaco do usuário com base na sua data de nascimento.
 
 ## Sobre o Projeto
 
-Este projeto foi desenvolvido como parte do meu curso de Engenharia de Software, na disciplina de Programação Web. Ele demonstra o uso de tecnologias web para criar uma aplicação que consulta informações em um arquivo XML.
+Este projeto foi desenvolvido como parte de um portfólio do meu curso de Engenharia de Software, na disciplina de Programação Web. Ele demonstra o uso de tecnologias web para criar uma aplicação que consulta informações em um arquivo XML.
 
 O usuário insere sua data de nascimento através de um formulário e o sistema determina o signo zodiacal correspondente, apresentando informações como características e período de cada signo.
 
@@ -26,7 +26,7 @@ O usuário insere sua data de nascimento através de um formulário e o sistema 
 ## Como Executar
 
 1. Instale o XAMPP (ou outro servidor Apache com PHP)
-2. Clone este repositório na pasta htdocs do XAMPP
+2. Clone este repositório numa pasta com nome "Project" no htdocs do XAMPP
 3. Inicie o servidor Apache
 4. Acesse o aplicativo através de http://localhost/Project/
 
