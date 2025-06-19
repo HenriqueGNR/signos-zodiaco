@@ -1,4 +1,4 @@
-<?php include('layouts/header.php'); ?>
+<?php include('https://raw.githubusercontent.com/HenriqueGNR/signos-zodiaco/refs/heads/main/layouts/header.php'); ?>
 
 <div class="container mt-5">
     <div class="row justify-content-center">
