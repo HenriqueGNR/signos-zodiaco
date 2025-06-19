@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Signo</title>
+    <!-- Link para o Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Link para o arquivo CSS personalizado -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/imgs/zodiac-icon.png" alt="Logo Zodíaco" width="30" height="30" class="d-inline-block align-text-top me-2">
+                Consulta de Signo
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h3>Descubra seu Signo</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <img src="assets/imgs/zodiac-wheel.png" alt="Roda do Zodíaco" class="img-fluid zodiac-img">
+                        </div>
+                        
+                        <form id="signo-form">
+                            <div class="mb-3">
+                                <label for="data_nascimento" class="form-label">Data de Nascimento</label>
+                                <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Consultar Signo</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center text-muted">
+                        Descubra características da sua personalidade baseadas no seu signo zodiacal
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Área para exibir resultados -->
+    <div id="resultado-signo" class="container mt-5" style="display: none;">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h3 id="signo-titulo">Seu Signo: </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <img id="signo-imagem" src="" alt="" class="img-fluid signo-img">
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-4 text-center">
+                                <div class="info-box">
+                                    <h5>Data</h5>
+                                    <p id="signo-periodo"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="info-box">
+                                    <h5>Signo</h5>
+                                    <p id="signo-nome"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="info-box">
+                                    <h5>Sua Data</h5>
+                                    <p id="data-usuario"></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="descricao-box p-3 mb-3">
+                            <h4 class="text-center mb-3">Características</h4>
+                            <p id="signo-descricao"></p>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button onclick="novaConsulta()" class="btn btn-primary">Nova Consulta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Área para exibir erro -->
+    <div id="erro-signo" class="container mt-5" style="display: none;">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="alert alert-danger">
+                    <h4 class="alert-heading">Erro!</h4>
+                    <p>Não foi possível determinar o signo com a data fornecida. Por favor, tente novamente.</p>
+                    <hr>
+                    <p class="mb-0">
+                        <button onclick="novaConsulta()" class="btn btn-outline-danger">Voltar</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" 
+    crossorigin="anonymous"></script>
+    
+    <!-- Script personalizado -->
+    <script src="assets/js/signos.js"></script>
+</body>
+</html>
