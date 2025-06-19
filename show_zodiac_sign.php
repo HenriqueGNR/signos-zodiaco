@@ -1,4 +1,4 @@
-<?php include('https://raw.githubusercontent.com/HenriqueGNR/signos-zodiaco/refs/heads/main/layouts/header.php'); ?>
+<?php include('layouts/header.php'); ?>
 
 <?php
 // Verificar se recebeu o formulário
@@ -13,8 +13,8 @@ if (isset($_POST['data_nascimento'])) {
     $dia = $data_nascimento_obj->format('d');
     $mes = $data_nascimento_obj->format('m');
     
-    // Carrega o XML do repositório
-    $signos = simplexml_load_file('https://raw.githubusercontent.com/HenriqueGNR/signos-zodiaco/refs/heads/main/signos.xml');
+    // Carregar o arquivo XML
+    $signos = simplexml_load_file("signos.xml");
     
     // Inicializa variáveis para armazenar informações do signo
     $signoEncontrado = null;
