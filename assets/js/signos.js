@@ -76,7 +76,7 @@ const signosData = [
 
 // Função para determinar o signo baseado na data
 function determinarSigno(dataNascimento) {
-    const data = new Date(dataNascimento);
+    const data = new Date(dataNascimento + 'T00:00:00');
     const dia = data.getDate();
     const mes = data.getMonth() + 1; // getMonth() retorna 0-11, então adicionamos 1
     
