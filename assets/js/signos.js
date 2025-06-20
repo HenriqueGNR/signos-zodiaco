@@ -107,7 +107,10 @@ function determinarSigno(dataNascimento) {
 // Função para formatar data no formato brasileiro
 function formatarData(data) {
     const dataObj = new Date(data);
-    return dataObj.toLocaleDateString('pt-BR');
+    const dia = String(dataObj.getUTCDate()).padStart(2, '0');
+    const mes = String(dataObj.getUTCMonth() + 1).padStart(2, '0');
+    const ano = dataObj.getUTCFullYear();
+    return `${dia}/${mes}/${ano}`;
 }
 
 // Função para exibir resultado do signo
