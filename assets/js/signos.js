@@ -76,9 +76,14 @@ const signosData = [
 
 // Função para determinar o signo baseado na data
 function determinarSigno(dataNascimento) {
-    const data = new Date(dataNascimento + 'T00:00:00');
-    const dia = data.getDate();
-    const mes = data.getMonth() + 1; // getMonth() retorna 0-11, então adicionamos 1
+    // Se a data vier no formato 'YYYY-MM-DD'
+    const [ano, mes, dia] = dataNascimento.split('-').map(Number);
+    
+    // Criar data usando construtor com parâmetros separados (evita fuso horário)
+    const data = new Date(ano, mes - 1, dia); // mes - 1 porque Date usa 0-11 para meses
+    
+    const diaFinal = data.getDate();
+    const mesFinal = data.getMonth() + 1;
     
     for (let signo of signosData) {
         const [diaInicio, mesInicio] = signo.dataInicio.split('/').map(Number);
@@ -86,16 +91,16 @@ function determinarSigno(dataNascimento) {
         
         // Caso especial para Capricórnio (dezembro a janeiro)
         if (mesInicio === 12 && mesFim === 1) {
-            if ((mes === 12 && dia >= diaInicio) || (mes === 1 && dia <= diaFim)) {
+            if ((mesFinal === 12 && diaFinal >= diaInicio) || (mesFinal === 1 && diaFinal <= diaFim)) {
                 return signo;
             }
         } else {
             // Casos normais
-            if (mes === mesInicio && dia >= diaInicio) {
+            if (mesFinal === mesInicio && diaFinal >= diaInicio) {
                 return signo;
-            } else if (mes === mesFim && dia <= diaFim) {
+            } else if (mesFinal === mesFim && diaFinal <= diaFim) {
                 return signo;
-            } else if (mes > mesInicio && mes < mesFim) {
+            } else if (mesFinal > mesInicio && mesFinal < mesFim) {
                 return signo;
             }
         }
@@ -104,12 +109,9 @@ function determinarSigno(dataNascimento) {
     return null;
 }
 
-// Função para formatar data no formato brasileiro
+// Função para formatar data
 function formatarData(data) {
-    const dataObj = new Date(data);
-    const dia = String(dataObj.getUTCDate()).padStart(2, '0');
-    const mes = String(dataObj.getUTCMonth() + 1).padStart(2, '0');
-    const ano = dataObj.getUTCFullYear();
+    const [ano, mes, dia] = data.split('-');
     return `${dia}/${mes}/${ano}`;
 }
 
